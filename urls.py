@@ -15,5 +15,8 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', direct_to_template, { 'template': 'home.html' }),
-    # url(r'^feed/$', 'mimeograph.mime.feed', 
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':
+    'registration/login.html'}),
+    url(r'^feed/', include('mime.urls')), 
+    # url(r'^feed/(?P<user_name>\w+)/', 'mimeograph
 )
