@@ -1,0 +1,30 @@
+#container {
+    width:960px;
+    margin: auto;
+}
+
+
+/* Header Styles */
+
+h1#title {
+    float: left;
+}
+
+#menu {
+    float: right;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+/* Content Styles */
+#content {
+    clear: both;
+}
