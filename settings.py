@@ -152,3 +152,5 @@ LOGGING = {
 }
 
 AUTH_PROFILE_MODULE = 'mime.MimeographProfile'
+
+LOGIN_REDIRECT_URL = '/feed/'

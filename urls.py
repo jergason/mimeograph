@@ -3,10 +3,6 @@ from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 admin.autodiscover()
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'mimeograph.views.home', name='home'),
@@ -19,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', direct_to_template, { 'template': 'home.html' }),
+    # url(r'^feed/$', 'mimeograph.mime.feed', 
 )
