@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html" charset=utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>{% block title %}Mimeograph{% endblock %}</title>
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,7 +12,7 @@
   <!--[if lt IE 8]>
   <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->  
-  <link rel="stylesheet" href="{{ STATIC_URL }}/css/main.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="{{ STATIC_URL }}/css/main.css" type="text/css" media="screen">
   {% block head %}
   {% endblock %}
 </head>
@@ -30,8 +30,9 @@
           <li><a href="#">Log in</a></li>
         </ul>
       </div><!-- end menu-->
-      {% endblock %}
-      {% endblock %}
+      {% endblock menu %}
+      {% endblock header %}
+      <hr />
     </div><!-- end header-->
     <div id="content">
       {% block content %}
@@ -41,10 +42,11 @@
         consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque
         ornare sem lacinia quam venenatis vestibulum.</p>
       {% endblock %}
+      <hr />
     </div><!-- end content-->
     <div id="footer">
       {% block footer %}
-      <h3>Here is the footer</h2>
+      <h3>Here is the footer</h3>
       <p>Nulla vitae elit libero, a pharetra augue.</p>
       {% endblock %}
     </div><!-- end footer-->
