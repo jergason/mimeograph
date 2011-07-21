@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset=utf-8">
+    <title>{% block title %}Mimeograph{% endblock %}</title>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/blueprint.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/main.css" type="text/css" media="screen" charset="utf-8">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <div id="header">
+      {% block header %}
+      <h1 id="title">Mimeograph</h1>
+      <div id="menu">
+        <ol>
+          <li><a href="#">Log in</a></li>
+        </ol>
+      </div><!-- end menu-->
+      {% endblock %}
+    </div><!-- end header-->
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div><!-- end content-->
+    <div id="footer">
+      {% block footer %}
+      {% endblock %}
+    </div><!-- end footer-->
+</body>
+</html>
