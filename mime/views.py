@@ -7,7 +7,12 @@ from mime.models import Following, Mime
 @login_required
 def own_feed(request):
     followees = Following.objects.filter(follower=request.user)
+    # for f in followees:
+
     #get most recent posts by followees ordered by time
+    # sets = []
+    # for f in Following.objects.filter(follower=request.user:
+        
     return render_to_response('feed.html', { 'u': request.user },
             context_instance=RequestContext(request))
 
@@ -32,6 +37,7 @@ def follow(request, user_name):
         #TODO: set session
     #make sure it is a POST form submission
     if request.method == "POST":
+        return redirect("mime.views.own_feed")
         #get user ID from hidden field, and follow him.
         #set a flash notice that they have been followed, and redirect to the
         # user's feed

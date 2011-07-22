@@ -12,9 +12,13 @@ class MimeographProfile(models.Model):
 
     def create_mimeograph_profile(sender, instance, created, **kwargs):
         if created:
-            MimeographProfile.objects.create(user=instance)
+            #If is is just create, then loading data from fixtures will break.
+            # We use get_or_create so when a user and profile is loaded
+            # from a fixture it doesn't try to automatically create another
+            # MimeographProfile and run into non-unique primary key problems.
+            MimeographProfile.objects.get_or_create(user=instance)
 
-    post_save.connect(create_user_profile, sender=User)
+    post_save.connect(create_mimeograph_profile, sender=User)
 
 
 class Following(models.Model):
@@ -22,8 +26,8 @@ class Following(models.Model):
     followee = models.ForeignKey(MimeographProfile, related_name='followee')
 
     def __unicode__(self):
-        return "%s is following %s" % (self.followee.username,
-                self.follower.username)
+        return "%s is following %s" % (self.follower.user.username,
+                self.followee.user.username)
 
 #TODO: figure out how to do many to one in the list
 class List(models.Model):
