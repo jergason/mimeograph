@@ -14,9 +14,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', direct_to_template, { 'template': 'home.html' }),
+    url(r'^$', 'shared.views.home'),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':
     'registration/login.html'}),
-    url(r'^feed/', include('mime.urls')), 
-    # url(r'^feed/(?P<user_name>\w+)/', 'mimeograph
+    url(r'^logout/$', 'shared.views.logout_view'),
+    url(r'^feed/', include('mime.urls')),
 )

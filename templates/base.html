@@ -7,12 +7,12 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min"></script>
-  <link rel="stylesheet" href="{{ STATIC_URL }}/css/blueprint/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="{{ STATIC_URL }}/css/blueprint/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print"> 
   <!--[if lt IE 8]>
   <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->  
-  <link rel="stylesheet" href="{{ STATIC_URL }}/css/main.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen">
   {% block head %}
   {% endblock %}
 </head>
@@ -24,10 +24,16 @@
       {% block menu %}
       <div id="menu">
         <ul>
-          <li class="first"><a href="#">Log in</a></li>
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Log in</a></li>
-          <li class="last"><a href="#">Log in</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="/logout">Log out</a></li>
+        {% else %}
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/signup">Create account</a></li>
+        {% endif %}
+          <!-- <li class="first"><a href="#">Log in</a></li>-->
+          <!-- <li><a href="#">Log in</a></li>-->
+          <!-- <li><a href="#">Log in</a></li>-->
+          <!-- <li class="last"><a href="#">Log in</a></li>-->
         </ul>
       </div><!-- end menu-->
       {% endblock menu %}
