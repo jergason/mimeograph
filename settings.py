@@ -154,6 +154,8 @@ LOGGING = {
 
 AUTH_PROFILE_MODULE = 'mime.MimeographProfile'
 
+LOGIN_URL = '/login/'
+
 LOGIN_REDIRECT_URL = '/feed/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
