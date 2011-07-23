@@ -67,24 +67,7 @@ def unfollow(request):
 
 @login_required
 def mime_create(request):
-    followees = Following.objects.filter(follower=request.user)
-
-    #TODO: remove self from followees
-    followees = request.user.get_profile().get_all_followees()
-    #get most recent posts by followees ordered by time
-    posts = {}
-
-    posts = Mime.objects.filter(author__in=followees).order_by('-pub_date')[:10]
-    form = MimeForm()
-    return render_to_response('own_feed.html',
-            {
-                'u': request.user,
-                'posts': posts,
-                'followees': followees,
-                'form': form,
-            },
-            context_instance=RequestContext(request))
-    # return render_to_response('test.html')
+    return render_to_response('test.html')
     # print("INSIDE CREATE MIME!")
     # if request.method == "POST":
     #     form = MimeForm(request.POST)

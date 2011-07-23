@@ -18,10 +18,5 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':
     'registration/login.html'}),
     url(r'^logout/$', 'shared.views.logout_view'),
-    url(r'^feed/$', 'mime.views.own_feed'),
-    url(r'^feed/(?P<user_name>\w+)/$', 'mime.views.other_feed'),
-    url(r'^feed/(?P<user_name>\w+)/follow/$', 'mime.views.follow'),
-    url(r'^feed/create_mime/$', 'mime.views.mime_create'),
-    url(r'^feed/delete_mime/$', 'mime.views.mime_delete'),
-    # url(r'^feed/', include('mime.urls')),
+    url(r'^feed/', include('mime.urls')),
 )
