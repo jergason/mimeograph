@@ -20,27 +20,42 @@
   <div id="container">
       <div id="header">
       {% block header %}
-      <h1 id="title">Mimeograph</h1>
-      {% block menu %}
-      <div id="menu">
-        <ul>
-        {% if user.is_authenticated %}
-        <li><a href="/logout">Log out</a></li>
-        {% else %}
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/signup">Create account</a></li>
-        {% endif %}
-          <!-- <li class="first"><a href="#">Log in</a></li>-->
-          <!-- <li><a href="#">Log in</a></li>-->
-          <!-- <li><a href="#">Log in</a></li>-->
-          <!-- <li class="last"><a href="#">Log in</a></li>-->
-        </ul>
-      </div><!-- end menu-->
-      {% endblock menu %}
+          <h1 id="title">Mimeograph</h1>
+          <div id="menu">
+              {% block menu %}
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="/logout">Log out</a></li>
+                    {% else %}
+                        <li><a href="/login">Log in</a></li>
+                        <li><a href="/signup">Create account</a></li>
+                    {% endif %}
+                      <!-- <li class="first"><a href="#">Log in</a></li>-->
+                      <!-- <li><a href="#">Log in</a></li>-->
+                      <!-- <li><a href="#">Log in</a></li>-->
+                      <!-- <li class="last"><a href="#">Log in</a></li>-->
+                </ul>
+              {% endblock menu %}
+          </div><!-- end menu-->
       {% endblock header %}
       <hr />
     </div><!-- end header-->
     <div id="content">
+        {% if flash.error %}
+            <div class="error">
+                {{ flash.error }}
+            </div>
+        {% endif %}
+        {% if flash.warning %}
+            <div class="warning">
+                {{ flash.warning }}
+            </div>
+        {% endif %}
+        {% if flash.success %}
+            <div class="success">
+                {{ flash.success }}
+            </div>
+        {% endif %}
       {% block content %}
         <p>Donec id elit non mi porta gravida at eget metus. Nulla vitae elit
         libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut

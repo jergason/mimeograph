@@ -1,1 +1,28 @@
 {% extends "feed.html" %}
+
+{% block feed-wrapper %}
+    {% if user.is_authenticated %}
+        {% if following %}
+            <form action="/feed/{{ other_user }}/unfollow/" method="POST" accept-charset="utf-8">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="Unfollow">
+            </form>
+        {% else %}
+            <form action="/feed/{{ other_user }}/follow/" method="post" accept-charset="utf-8">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="Follow">
+            </form>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block posts %}
+    {% for mime in mimes %}
+        <div class="post">
+            <p>{{ mime.content }}</p>
+            <h4>By {{ mime.author.user.username }}</h4>
+        </div>
+    {% endfor %}
+{% endblock %}

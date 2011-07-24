@@ -41,16 +41,19 @@ def other_feed(request, user_name):
     else:
         user = user[0]
         posts = Mime.objects.filter(author=user)
+        following = Following.objects.filter(follower=User.objects.get(username=request.username),
+                followee=User.objects.get(username=user_name)).exists()
         return render_to_response('feed.html',
-            { 'u': user, 'posts': posts },
+                { 'u': user, 'posts': posts, 'other_user': user_name,
+                    'following': following },
             context_instance=RequestContext(request))
 
 @login_required
 def follow(request):
-    #make sure it is a POST form submission
     if request.method == "POST":
         followee_id = request.POST['id']
-        following = Followings(followee=MimographProfile.get(pk=followee_id),
+        #TODO: make sure they are not already following
+        following, already_follow = Following.objects.get_or_create(followee=MimographProfile.get(pk=followee_id),
                 follower=request.user.get_profile())
         following.save()
         #TODO: set a flash notice that they have been followed, and redirect to the user's feed

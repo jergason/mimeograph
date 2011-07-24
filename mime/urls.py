@@ -6,4 +6,5 @@ urlpatterns = patterns('mime.views',
     url(r'^delete_mime/$', 'mime_delete'),
     url(r'^(?P<user_name>\w+)/$', 'other_feed'),
     url(r'^(?P<user_name>\w+)/follow/$', 'follow'),
+    url(r'^(?P<user_name>\w+)/unfollow/$', 'unfollow'),
 )
