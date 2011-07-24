@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block content %}
+{% if signup_form.errors %}
+<p>Sorry, there was an error filling out the form. Please try again.</p>
+{% endif %}
+
+<h1>{{ beans }}</h1>
+
+<form method="post" action="/signup/">
+    {% csrf_token %}
+    <input type="text" name="username">
+    <input type="text" name="email">
+    <input type="password" name="password">
+    <input type="password" name="password2">
+    <!-- {{ signup_form.to_p }}-->
+    <input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" name="Sign Up" >
+</form>
+{% endblock content %}

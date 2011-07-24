@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':
     'registration/login.html'}),
     url(r'^logout/$', 'shared.views.logout_view'),
+    url(r'^signup/$', 'shared.views.signup_view'),
     url(r'^feed/', include('mime.urls')),
 )

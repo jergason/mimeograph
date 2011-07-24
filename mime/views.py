@@ -20,7 +20,7 @@ def own_feed(request):
     return render_to_response('own_feed.html',
             {
                 'u': request.user,
-                'posts': posts,
+                'mimes': posts,
                 'followees': followees,
                 'form': form,
             },
@@ -36,6 +36,7 @@ def other_feed(request, user_name):
     if request.user.username == user_name:
         return redirect('mime.views.own_feed')
     if user.count() == 0:
+        print("Other feed for %s not found" % user_name)
         raise Http404
     else:
         user = user[0]
@@ -67,25 +68,25 @@ def unfollow(request):
 
 @login_required
 def mime_create(request):
-    return render_to_response('test.html')
-    # print("INSIDE CREATE MIME!")
-    # if request.method == "POST":
-    #     form = MimeForm(request.POST)
-    #     if form.is_valid():
-    #         #process data, create the Mime, set the session and redirect
-    #         mime = Mime(author=request.user.get_profile(),
-    #                 content=form.cleaned_data['content'],
-    #                 pub_date=datetime.now())
-    #         if mime.save():
-    #             #TODO: set the session
-    #             print("Mime is saved!")
-    # return redirect('mime.views.own_feed')
+    # return render_to_response('test.html')
+    print("INSIDE CREATE MIME!")
+    if request.method == "POST":
+        form = MimeForm(request.POST)
+        if form.is_valid():
+            #process data, create the Mime, set the session and redirect
+            mime = Mime(author=request.user.get_profile(),
+                    content=form.cleaned_data['content'],
+                    pub_date=datetime.now())
+            if mime.save():
+                #TODO: set the session
+                print("Mime is saved!")
+    return redirect('mime.views.own_feed')
 
 @login_required
 def mime_delete(request):
     #make sure the user is trying to delete their own mime.
     #if not, set a flash notice and redirect.
-    #TODO: cats DoesNotExist errors
+    #TODO: catch DoesNotExist errors
     if request.method == "POST":
         mime = Mime.objects.get(pk=request.POST['id'])
         if mime.author != request.user.get_profile():
