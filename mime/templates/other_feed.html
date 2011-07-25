@@ -2,7 +2,7 @@
 
 {% block feed-wrapper %}
     {% if user.is_authenticated %}
-        {% if following %}
+        {% if is_current_user_following %}
             <form action="/feed/{{ other_user }}/unfollow/" method="POST" accept-charset="utf-8">
                 {% csrf_token %}
                 {{ form.as_p }}

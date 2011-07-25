@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django import forms
+from datetime import datetime
 
 class MimeographProfile(models.Model):
     user = models.OneToOneField(User)
-    following = models.ManyToManyField('self', symmetrical=False,
-    through='Following')
+    following = models.ManyToManyField('self', symmetrical=False, through='Following')
 
     def __unicode__(self):
         return "%s" % self.user.username
@@ -51,10 +51,10 @@ class List(models.Model):
 class Mime(models.Model):
     author = models.ForeignKey(MimeographProfile)
     content = models.TextField()
-    pub_date = models.DateTimeField('date posted')
+    pub_date = models.DateTimeField('date posted', default=datetime.now())
 
     def __unicode__(self):
-        return "by %s on %s" % (self.author.username, self.pub_date)
+        return "by %s on %s" % (self.author.user.username, self.pub_date)
 
 class MimeForm(forms.Form):
     content = forms.CharField(min_length=1, label="Upload a photo")

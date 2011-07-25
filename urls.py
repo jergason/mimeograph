@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'shared.views.home'),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':
-    'registration/login.html'}),
+        'registration/login.html'}),
     url(r'^logout/$', 'shared.views.logout_view'),
     url(r'^signup/$', 'shared.views.signup_view'),
     url(r'^feed/', include('mime.urls')),
