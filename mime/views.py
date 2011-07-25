@@ -45,10 +45,11 @@ def other_feed(request, user_name):
     else:
         user = user[0]
         posts = Mime.objects.filter(author=user)
-        is_current_user_following = Following.objects.filter(follower=User.objects.get(username=request.username),
-                followee=User.objects.get(username=user_name)).exists()
-        return render_to_response('feed.html',
-                { 'u': user, 'posts': posts, 'other_user': user_name,
+        is_current_user_following = Following.objects.filter(follower=User.objects.get(username=request.user.username), followee=User.objects.get(username=user_name)).exists()
+        return render_to_response('other_feed.html',
+                { 'u': user, 'posts': posts,
+                    'other_user': user_name,
+                    'other_user_id': User.objects.get(username=user_name).id,
                     'is_current_user_following': is_current_user_following,
                     'flash': get_flash_messages(request) },
             context_instance=RequestContext(request))

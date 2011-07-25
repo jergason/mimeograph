@@ -5,26 +5,19 @@
         {% if is_current_user_following %}
             <form action="/feed/{{ other_user }}/unfollow/" method="POST" accept-charset="utf-8">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" name="Unfollow">
+                <input type="hidden" name="id" value="{{ other_user_id }}">
+                <input type="submit" name="Unfollow" value="Unfollow">
             </form>
         {% else %}
             <form action="/feed/{{ other_user }}/follow/" method="post" accept-charset="utf-8">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" name="Follow">
+                <input type="hidden" name="id" value="{{ other_user_id }}">
+                <input type="submit" name="Follow" value="Follow">
             </form>
         {% endif %}
     {% endif %}
 {% endblock %}
 
 {% block posts %}
-    {% for mime in mimes %}
-        <div class="post">
-            <div class="mime">
-                <pre>{{ mime.content }}</pre>
-            </div>
-            <h4>By {{ mime.author.user.username }}</h4>
-        </div>
-    {% endfor %}
+    {% include "posts.html" %}
 {% endblock %}

@@ -9,19 +9,5 @@
 {% endblock %}
 
 {% block posts %}
-    {% for mime in mimes  %}
-    <div class="post">
-        <div class="mime">
-            <pre>{{ mime.content }}</pre>
-        </div>
-        <h4>By {{ mime.author.user.username }}</h4>
-        {% if mime.author.user == user %}
-            <form action="/feed/delete_mime/" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="id" value="{{ mime.id }}">
-                <input type="submit" value="Delete">
-            </form>
-        {% endif %}
-    </div>
-    {% endfor %}
+    {% include "posts.html" %}
 {% endblock %}
