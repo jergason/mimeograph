@@ -57,4 +57,4 @@ class Mime(models.Model):
         return "by %s on %s" % (self.author.user.username, self.pub_date)
 
 class MimeForm(forms.Form):
-    content = forms.CharField(min_length=1, label="Upload a photo")
+    content = forms.FileField(label="Upload an image.")

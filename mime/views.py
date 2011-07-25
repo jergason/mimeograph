@@ -5,7 +5,8 @@ from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from mime.models import Following, Mime, MimeForm
 from datetime import datetime
-from mimeograph_utils import get_flash_messages, error_for_get_to_post_url, set_flash_message
+from mimeograph_utils import *
+from os import remove
 
 @login_required
 def own_feed(request):
@@ -81,16 +82,13 @@ def unfollow(request, user_name):
 @login_required
 def mime_create(request):
     if request.method == "POST":
-        form = MimeForm(request.POST)
+        form = MimeForm(request.POST, request.FILES)
         if form.is_valid():
             #process data, create the Mime, set the session and redirect
-            mime = Mime(author=request.user.get_profile(),
-                    content=form.cleaned_data['content'],
-                    pub_date=datetime.now())
+            img = handle_uploaded_image(request.FILES['content'])
+            mime = Mime(author=request.user.get_profile(), content=img)
             mime.save()
             set_flash_message(request, 'success', "Mime successfully posted.")
-            print("Mime created, and here is flash:")
-            print(request.session['flash'])
         else:
             set_flash_message(request, 'error', "Invalid input data. Try again with more valid data.")
     else:
@@ -112,3 +110,15 @@ def mime_delete(request):
     else:
         error_for_get_to_post_url(request)
     return redirect('mime.views.own_feed')
+
+
+def handle_uploaded_image(f):
+    """Save the uploaded file to a temporary directory, run the image
+    processing code on it and return the string that represents the image."""
+    destination = open("tmp/%s" % f.name, 'wb+')
+    for chunk in f.chunks():
+        destination.write(chunk)
+    destination.close()
+    image_as_ASCII = convert_image("tmp/%s" % f.name)
+    remove("tmp/%s" % f.name)
+    return image_as_ASCII

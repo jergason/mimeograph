@@ -21,7 +21,9 @@
 {% block posts %}
     {% for mime in mimes %}
         <div class="post">
-            <p>{{ mime.content }}</p>
+            <div class="mime">
+                <pre>{{ mime.content }}</pre>
+            </div>
             <h4>By {{ mime.author.user.username }}</h4>
         </div>
     {% endfor %}

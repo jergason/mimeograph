@@ -1,7 +1,7 @@
 {% extends "feed.html" %}
 
 {% block feed-wrapper %}
-<form action="/feed/create_mime/", method="POST">
+<form action="/feed/create_mime/", method="POST", enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
@@ -11,7 +11,9 @@
 {% block posts %}
     {% for mime in mimes  %}
     <div class="post">
-        <p>{{ mime.content }}</p>
+        <div class="mime">
+            <pre>{{ mime.content }}</pre>
+        </div>
         <h4>By {{ mime.author.user.username }}</h4>
         {% if mime.author.user == user %}
             <form action="/feed/delete_mime/" method="POST">

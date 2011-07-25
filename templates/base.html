@@ -25,6 +25,7 @@
               {% block menu %}
                 <ul>
                     {% if user.is_authenticated %}
+                        <li>Hi, {{ user.username }}</li>
                         <li><a href="/logout">Log out</a></li>
                     {% else %}
                         <li><a href="/login">Log in</a></li>
