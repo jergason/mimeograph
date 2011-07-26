@@ -43,8 +43,6 @@ def other_feed(request, user_name):
     else:
         user = user[0]
         posts = Mime.objects.filter(author=user)
-        if request.user.is_authenticated():
-            print("User is authenticated")
         is_current_user_following = Following.objects.filter(follower=User.objects.get(username=request.user.username), followee=User.objects.get(username=user_name)).exists() if request.user.is_authenticated() else False
         return render_to_response('other_feed.html',
                 { 'u': user, 'posts': posts,

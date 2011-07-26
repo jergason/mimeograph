@@ -23,5 +23,9 @@
 <input type="submit" value="Log in" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
+<p>
+<a href="{% url shared.views.forgot_password %}">Forgot your password? Click
+    here to reset.</a>
+</p>
 
 {% endblock %}

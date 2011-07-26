@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from mime.models import Mime
 from django.contrib.auth.forms import UserCreationForm
 from django.template import RequestContext
+from django.core.mail import send_mail
 from mimeograph_utils import get_flash_messages, set_flash_message
 import re
 
@@ -55,3 +56,26 @@ def signup_view(request):
                 'signup.html',
                 { 'flash': get_flash_messages(request), 'signup_form': signup_form, 'beans': 'A BUNCH OF BEANS', },
                 context_instance=RequestContext(request))
+
+def forgot_password(request):
+    if request.method == "POST":
+        # see if there is a user with that usename and email address.
+        # if so, reset the password and email it to them
+        # if not, set an error and redirect to the same page.
+        if User.objects.filter(username=request.POST['username'], email=request.POST['email']).exists():
+            u = User.objects.filter(username=request.POST['username'], email=request.POST['email'])[0]
+            #SECURE LIKE SONY!
+            random_password = "BAKEDBEANS"
+            message = "Hey, just wanted to let you know that the password for %s on Mimeograph was reset to %s. Please log in!" % (u.username, random_password)
+            u.set_password(random_password)
+            u.save()
+            # send an email to them.
+            send_mail('Password Reset on Mimeograph', message, 'noreply@mimeograph.com', [u.email], fail_silently=False)
+            set_flash_message(request, 'success', "Password successfully reset for %s." % u.username)
+            return redirect('shared.views.home')
+        else:
+            set_flash_message(request, 'error', "No user named %s with email address name %s." % (request.POST['username'], request.POST['email']))
+            return redirect('shared.views.forgot_password')
+    else:
+        #show the form
+        return render_to_response('reset.html', {}, context_instance=RequestContext(request))

@@ -19,5 +19,6 @@ urlpatterns = patterns('',
         'registration/login.html'}),
     url(r'^logout/$', 'shared.views.logout_view'),
     url(r'^signup/$', 'shared.views.signup_view'),
+    url(r'^forgot-password/$', 'shared.views.forgot_password'),
     url(r'^feed/', include('mime.urls')),
 )
