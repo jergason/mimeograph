@@ -1,13 +1,27 @@
+body {
+    background-color: #DFEAEB;
+}
+
 #container {
     width:960px;
     margin: auto;
+    padding: 20px;
+    background-color: white;
 }
 
 
 /* Header Styles */
 
+div#header {
+    padding-bottom: 80px;
+    margin-bottom: 20px;
+}
+
 h1#title {
     float: left;
+    font-size: 5em;
+    margin-bottom: 0em;
+
 }
 
 
@@ -17,6 +31,9 @@ h1#title a {
 
 #menu {
     float: right;
+    position: relative;
+    top: 15px;
+    font-size: 1.5em;
 }
 
 #menu ul {
@@ -32,4 +49,10 @@ h1#title a {
 /* Content Styles */
 #content {
     clear: both;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+table#signup-form {
+    width: 300px;
 }

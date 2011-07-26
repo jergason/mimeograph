@@ -1,13 +1,17 @@
 from django.shortcuts import render_to_response, redirect
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
+from mime.models import Mime
 from django.contrib.auth.forms import UserCreationForm
 from django.template import RequestContext
 from mimeograph_utils import get_flash_messages, set_flash_message
+import re
 
 def home(request):
+    recent_posts = Mime.objects.all().order_by("-pub_date")[:5]
     return render_to_response('home.html',
-            { 'flash': get_flash_messages(request) },
+            { 'flash': get_flash_messages(request),
+                'mimes': recent_posts },
             context_instance=RequestContext(request))
 
 
@@ -21,17 +25,19 @@ def logout_view(request):
 
 def signup_view(request):
     if request.method == "POST":
-        # form = UserCreationForm(request.POST)
-        # if form.is_valid():
-            #create the new user
+        email_re = re.compile("\w+@\w+\.\w+")
+        username_re = re.compile("[\w\d]+")
         if request.POST['password'] != request.POST['password2']:
-            #TODO: set a validation error
             set_flash_message(request, 'error', "Password and password confirmation did not match!")
+        elif not email_re.match(request.POST['email']):
+            set_flash_message(request, 'error', 'Looks like your email address didn\'t match our naive regex.')
+        elif not username_re.match(request.POST['username']):
+            set_flash_message(request, 'error', "Username must be alphanumeric characters only.")
+        elif request.POST['password'] == "" or request.POST['username'] == '' or request.POST['email'] == '' or request.POST['password2'] == '':
+            set_flash_message(request, 'error', "Fields must not be blank.")
         else:
             u = User.objects.create_user(request.POST['username'],
             request.POST['email'], request.POST['password'])
-        # u = User.objects.create_user(form.cleaned_data['username'],
-        #             form.cleaned_data['email'], form.cleaned_data['password'])
             u.save()
             authenticated_user = authenticate(username=u.username,
                     password=request.POST['password'])
@@ -39,14 +45,12 @@ def signup_view(request):
                 print("Uh oh, couldn't log in the user we just created!")
                 set_flash_message(request,'error',"A strange error occurred. Please try loggin in manually.")
             else:
-                if login(request, logged_in):
-                    set_flash_message(request, 'success', "Successfully created user.  You have been logged in automatically.")
-                else:
-                    set_flash_message(request, 'error', "A strange error occurred. Please try loggin in manually.")
-        return redirect('mime.views.own_feed')
+                login(request, authenticated_user)
+                set_flash_message(request, 'success', "Successfully created user.  You have been logged in automatically.")
+                return redirect('mime.views.own_feed')
+        return redirect('shared.views.signup_view')
     else:
         signup_form = UserCreationForm()
-        # print(signup_form.to_p())
         return render_to_response(
                 'signup.html',
                 { 'flash': get_flash_messages(request), 'signup_form': signup_form, 'beans': 'A BUNCH OF BEANS', },

@@ -1,3 +1,4 @@
+{% if mimes %}
 {% for mime in mimes  %}
 <div class="post">
     <div class="mime">
@@ -8,8 +9,11 @@
     <form action="{% url mime.views.mime_delete %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{ mime.id }}">
-            <input type="submit" value="Delete">
+            <input class="delete" type="submit" value="Delete">
         </form>
     {% endif %}
 </div>
 {% endfor %}
+{% else %}
+<p> Looks like there is nothing here yet.</p>
+{% endif %}

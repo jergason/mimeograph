@@ -16,7 +16,7 @@ def own_feed(request):
     # This should work. Need to look more at closures in python. What is their scope like?
 
     #get most recent posts by followees ordered by time
-    posts = Mime.objects.filter(author__in=followees).order_by('-pub_date')[:10]
+    posts = Mime.objects.filter(author__in=followees).order_by('-pub_date')
     form = MimeForm()
 
     return render_to_response('own_feed.html',
@@ -54,12 +54,12 @@ def other_feed(request, user_name):
             context_instance=RequestContext(request))
 
 @login_required
-def follow(request):
+def follow(request, user_name):
     if request.method == "POST":
         followee_id = request.POST['id']
         #TODO: make sure they are not already following
         #TODO: user the name from the URL, not the ID
-        following, already_follow = Following.objects.get_or_create(followee=MimographProfile.objects.get(pk=followee_id), follower=request.user.get_profile())
+        following, already_follow = Following.objects.get_or_create(followee=MimeographProfile.objects.get(pk=followee_id), follower=request.user.get_profile())
         following.save()
         set_flash_message(request, 'success', "You successfully followed %s." % MimeographProfile.objects.get(pk=followee_id).user.username)
     else:

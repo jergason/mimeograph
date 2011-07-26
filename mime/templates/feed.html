@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}mimeograph.css" type="text/css" media="screen">
+{% endblock head %}
 {% block content %}
 <h2>{{ u.username }}'s Feed</h2>
 <div id="feed-wrapper">

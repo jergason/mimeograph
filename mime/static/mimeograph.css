@@ -1,3 +1,14 @@
+div#feed-wrapper div.followers-following {
+    float: left;
+    border: 1px solid black;
+}
+
+div#feed-wrapper div.post-mime-form {
+    float: right;
+    border: 1px solid black;
+}
+
+
 div#follow-list div.followeroree {
     border: black 1px solid;
     padding: 5px;
@@ -13,4 +24,26 @@ div#follow-list div.followeroree ul {
 
 div#follow-list div.followeroree ul li {
     display: inline;
+}
+
+#posts {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+div.post h4 {
+    float: left;
+}
+
+div.post input.delete {
+    float:right;
+    position: relative;
+    right: 700px;
+}
+
+div.post {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 20px;
 }

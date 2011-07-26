@@ -11,10 +11,42 @@
 
 <form method="post" action="/signup/">
     {% csrf_token %}
-    <input type="text" name="username">
-    <input type="text" name="email">
-    <input type="password" name="password">
-    <input type="password" name="password2">
+    <table id="signup-form">
+        <tr>
+            <td><label>User Name:</label></td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>
+                Username may consist of alphanumeric characters only.
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email Address:</label></td>
+            <td><input type="text" name="email">
+            </td>
+
+        </tr>
+        <tr><td>Note: email address must be correctly formatted.</td></tr>
+
+        <tr>
+            <td>
+                <label>Password:</label>
+            </td>
+            <td>
+                <input type="password" name="password">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Password Confirmation:</label>
+            </td>
+            <td>
+                <input type="password" name="password2">
+            </td>
+        </tr>
+    </table>
     <!-- {{ signup_form.to_p }}-->
     <input type="hidden" name="next" value="{{ next }}">
     <input type="submit" name="Sign Up" >

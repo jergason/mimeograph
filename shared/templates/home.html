@@ -1,3 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %}Mimeograph Home Page{% endblock title%}
+{% block content %}
+<p>A mimeograph is a machine that produces copies from a stencil. Think a
+low-tech photocopier. Mimeograph the web application is a Twitter clone with a
+twist. Users upload photos that are converted to ASCII art and are posted to a
+feed.</p>
+
+<p>Twitter has tweets, and Mimeograph has mimes. Users can follow other users
+to see their mimes show up in their feed, or go directly to other user's feeds
+to see all of their mimes.</p>
+<h2>See what users are sharing</h2>
+<div id="recent-mimes">
+    {% include "posts.html" %}
+</div>
+
+{% endblock %}

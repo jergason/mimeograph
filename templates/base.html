@@ -7,7 +7,7 @@
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+  <script src="{{ STATIC_URL }}javascript/jquery.js"></script>
   <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print"> 
   <!--[if lt IE 8]>
@@ -36,7 +36,6 @@
               {% endblock menu %}
           </div><!-- end menu-->
       {% endblock header %}
-      <hr />
     </div><!-- end header-->
     <div id="content">
         {% if flash.error %}
@@ -61,10 +60,10 @@
         consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque
         ornare sem lacinia quam venenatis vestibulum.</p>
       {% endblock %}
-      <hr />
     </div><!-- end content-->
     <div id="footer">
       {% block footer %}
+      <hr />
       <h3>Created by Jamison Dance for <a href="http://ilab.cs.byu.edu/cs360/2011w/assignments/lab7.html">CS 360</a></h3>
       {% endblock %}
     </div><!-- end footer-->
