@@ -5,7 +5,7 @@
     </div>
     <h4>By {{ mime.author.user.username }}</h4>
     {% if mime.author.user == user %}
-        <form action="/feed/delete_mime/" method="POST">
+    <form action="{% url mime.views.mime_delete %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{ mime.id }}">
             <input type="submit" value="Delete">

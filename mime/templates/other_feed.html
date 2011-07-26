@@ -1,21 +1,23 @@
 {% extends "feed.html" %}
 
 {% block feed-wrapper %}
-    {% if user.is_authenticated %}
-        {% if is_current_user_following %}
-            <form action="/feed/{{ other_user }}/unfollow/" method="POST" accept-charset="utf-8">
-                {% csrf_token %}
-                <input type="hidden" name="id" value="{{ other_user_id }}">
-                <input type="submit" name="Unfollow" value="Unfollow">
-            </form>
-        {% else %}
-            <form action="/feed/{{ other_user }}/follow/" method="post" accept-charset="utf-8">
-                {% csrf_token %}
-                <input type="hidden" name="id" value="{{ other_user_id }}">
-                <input type="submit" name="Follow" value="Follow">
-            </form>
+    <div class="follow-unfollow-form">
+        {% if user.is_authenticated %}
+            {% if is_current_user_following %}
+                <form action="{% url mime.views.unfollow other_user %}" method="POST" accept-charset="utf-8">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ other_user_id }}">
+                    <input type="submit" name="Unfollow" value="Unfollow">
+                </form>
+            {% else %}
+                <form action="{% url mime.views.follow other_user %}" method="post" accept-charset="utf-8">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ other_user_id }}">
+                    <input type="submit" name="Follow" value="Follow">
+                </form>
+            {% endif %}
         {% endif %}
-    {% endif %}
+    </div>
 {% endblock %}
 
 {% block posts %}

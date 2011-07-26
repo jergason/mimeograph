@@ -3,6 +3,12 @@
 {% block content %}
 <h2>{{ u.username }}'s Feed</h2>
 <div id="feed-wrapper">
+    <div class="followers-following">
+        <h3>Followers and Followees</h3>
+        <ul>
+            <li>Followers: <a href="{% url mime.views.get_followers u.username %}">{{ u.get_profile.number_of_followers }}</a></li>
+            <li>Followees: <a href="{% url mime.views.get_following u.username  %}">{{ u.get_profile.number_of_followees }}</a></li>
+    </div>
     {% block feed-wrapper %}
     {% endblock feed-wrapper %}
     <div id="posts">
@@ -13,10 +19,5 @@
         ac facilisis in, egestas eget quam.</p>
         {% endblock posts %}
     </div>
-</div>
-<div id="sidebar">
-    {% block sidebar %}
-    <p>THIS IS THE SIDEBAR
-    {% endblock %}
 </div>
 {% endblock %}

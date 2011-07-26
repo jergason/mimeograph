@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}mimeograph.css" type="text/css" media="screen">
+{% endblock head %}
+
+{% block content %}
+    <div id="follow-list">
+        <h2>Users {{ follow_word }} {{ user_name }}</h2>
+        {% if follows %}
+            {% for f in follows  %}
+                <div class="followeroree">
+                    <ul>
+                        <li><a href="{% url mime.views.other_feed user_name=f.user.username %}">{{ f.user.username }}</a></li>
+                        <li>Followers: <a href="{% url mime.views.get_followers f.user.username %}">{{ f.number_of_followers }}</a></li>
+                        <li>Following: <a href="{% url mime.views.get_following f.user.username %}">{{ f.number_of_followees }}</a></li>
+                    </ul>
+                    <h4>Most Recent Post:</h4>
+                    <div class="most-recent-post">
+                        {% if f.most_recent_post_content %}
+                            <div class="mime">
+                                <pre>{{ f.most_recent_post_content }}</pre>
+                            </div>
+                        {% else %}
+                            <p>Looks like this user hasn't posted anything yet.</p>
+                        {% endif %}
+                        {% comment %}
+                        {% if user.is_authenticated %}
+                            {% if logged_in_user_is_following %}
+                                <form action="/feed/{{ user_name }}/unfollow/" method="POST">
+                                    <input type="hidden" name="id" value="{{ user_profile_id }}">
+                                    <input type="submit" name="Unfollow"
+                                    value="Unfollow {{ f.user.username }}">
+                                </form>
+                            {% else %}
+                                <form action="/feed/{{ user_name }}/follow/" method="POST">
+                                    <input type="hidden" name="id" value="{{ user_profile_id }}">
+                                    <input type="submit" name="Follow" value="Follow {{
+                                    f.user.username }}">
+                                </form>
+                            {% endif %}
+                        {% else %}
+                            <a href="/login/">Log in to follow or unfollow.</a>
+                        {% endif %}
+                        {% endcomment %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        {% if follow_word == "following" %}
+            <p>Looks like {{ user_name }} has no users following them.</p>
+        {% else %}
+            <p>Looks like {{ user_name }} is not following anyone.</p>
+        {% endif %}
+        {% endif %}
+    </div>
+{% endblock content %}
+
+{% block sidebar %}
+{% comment %}
+We don't want a sidebar to show up for the following/followers page.
+{% endcomment %}
+{% endblock sidebar %}

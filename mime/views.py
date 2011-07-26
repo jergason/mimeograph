@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-from mime.models import Following, Mime, MimeForm
+from mime.models import Following, Mime, MimeForm, MimeographProfile
 from datetime import datetime
 from mimeograph_utils import *
 from os import remove
@@ -12,11 +12,10 @@ from os import remove
 def own_feed(request):
     followees = Following.objects.filter(follower=request.user)
 
-    #TODO: remove self from followees
-    followees = request.user.get_profile().get_all_followees()
+    followees = request.user.get_profile().get_all_followees(True)
+    # This should work. Need to look more at closures in python. What is their scope like?
 
     #get most recent posts by followees ordered by time
-    posts = {}
     posts = Mime.objects.filter(author__in=followees).order_by('-pub_date')[:10]
     form = MimeForm()
 
@@ -59,6 +58,7 @@ def follow(request):
     if request.method == "POST":
         followee_id = request.POST['id']
         #TODO: make sure they are not already following
+        #TODO: user the name from the URL, not the ID
         following, already_follow = Following.objects.get_or_create(followee=MimographProfile.objects.get(pk=followee_id), follower=request.user.get_profile())
         following.save()
         set_flash_message(request, 'success', "You successfully followed %s." % MimeographProfile.objects.get(pk=followee_id).user.username)
@@ -112,6 +112,49 @@ def mime_delete(request):
         error_for_get_to_post_url(request)
     return redirect('mime.views.own_feed')
 
+
+def get_follows(request, user_name, followers_or_followees):
+    """Will call get_followers or get_followees depending on the value of the
+    last argument. Cut down on code duplication."""
+    #redirect to last page if there is no user for user_name
+    if not User.objects.filter(username=user_name).exists():
+        set_flash_message(request, 'warning', "No user named %s exists." % user_name)
+        return redirect('mime.views.own_feed')
+
+    #Forgive the long lines. Don't quite have my hand around
+    # python formatting rules yet, and Laziness is also a factor.
+    u = User.objects.get(username=user_name)
+    user_is_following = Following.objects.filter(follower=request.user.get_profile(),followee=u.get_profile()).exists() if (request.user.is_authenticated()) else False
+    user_id = u.get_profile().id
+
+    follows = []
+    follow_word = ''
+    if followers_or_followees == "followers":
+        follows = u.get_profile().get_all_followers(False)
+        follow_word = 'following'
+    elif followers_or_followees == "followees":
+        follows = u.get_profile().get_all_followees(False)
+        follow_word = 'being followed by'
+    else:
+        raise ValueError("currently only supports 'followers' or 'followees' as arguments.")
+
+    return render_to_response('follow.html',
+            {
+                'follow_word': follow_word,
+                'user_name': user_name,
+                'logged_in_user_is_following': user_is_following,
+                'user_profile_id': user_id,
+                'follows': follows
+            },
+            context_instance=RequestContext(request))
+
+def get_followers(request, user_name):
+    """Get all users following user_name and render them in a view."""
+    return get_follows(request, user_name, 'followers')
+
+def get_following(request, user_name):
+    """Get all users that user_name is following and render them in a view."""
+    return get_follows(request, user_name, 'followees')
 
 def handle_uploaded_image(f):
     """Save the uploaded file to a temporary directory, run the image

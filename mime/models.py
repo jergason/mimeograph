@@ -25,13 +25,42 @@ class MimeographProfile(models.Model):
 
     post_save.connect(create_mimeograph_profile, sender=User)
 
-    def get_all_followees(self):
-        return [f.followee for f in
-                Following.objects.filter(follower=self)]
+    def get_all_followees(self, include_self=False):
+        """Get all users that are followed by this user excluding
+        themselves."""
+        followees = [f.followee for f in Following.objects.filter(follower=self)]
+        if include_self:
+            return followees
+        else:
+            return filter(lambda x: x.user.username != self.user.username, followees)
 
-    def get_all_followers(self):
-        return [f.follower for f in
-                Following.objects.filter(followee=self)]
+    def get_all_followees_without_self(self):
+        return self.get_all_followees(False)
+
+    def get_all_followers(self, include_self=False):
+        """Get all users that follow this user besides themselves."""
+        followers = [f.follower for f in Following.objects.filter(followee=self)]
+        if include_self:
+            return followers
+        else:
+            return filter(lambda x: x.user.username != self.user.username, followers)
+
+    def get_all_followers_without_self(self):
+        return self.get_all_followers(False)
+
+    def number_of_followers(self, include_self=False):
+        return len(self.get_all_followers(include_self))
+
+    def number_of_followees(self, include_self=False):
+        return len(self.get_all_followees(include_self))
+
+    def most_recent_post_content(self):
+        """Get the content of the most recent post by this user, or return None if they have
+        no posts."""
+        if self.mime_set.all().exists():
+            return self.mime_set.all().order_by('-pub_date')[0].content
+        else:
+            return None
 
 
 

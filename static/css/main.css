@@ -10,6 +10,11 @@ h1#title {
     float: left;
 }
 
+
+h1#title a {
+
+}
+
 #menu {
     float: right;
 }

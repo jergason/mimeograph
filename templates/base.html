@@ -1,3 +1,4 @@
+{% load url from future %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,7 +12,7 @@
   <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print"> 
   <!--[if lt IE 8]>
   <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->  
+  <![endif]-->
   <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen">
   {% block head %}
   {% endblock %}
@@ -20,16 +21,16 @@
   <div id="container">
       <div id="header">
       {% block header %}
-          <h1 id="title">Mimeograph</h1>
+          <h1 id="title"><a href="/feed/">Mimeograph</a></h1>
           <div id="menu">
               {% block menu %}
                 <ul>
                     {% if user.is_authenticated %}
                         <li>Hi, {{ user.username }}</li>
-                        <li><a href="/logout">Log out</a></li>
+                        <li><a href="{% url 'shared.views.logout_view' %}">Log out</a></li>
                     {% else %}
-                        <li><a href="/login">Log in</a></li>
-                        <li><a href="/signup">Create account</a></li>
+                        <li><a href="{% url 'django.contrib.auth.views.login' %}">Log in</a></li>
+                        <li><a href="{% url 'shared.views.signup_view' %}">Create account</a></li>
                     {% endif %}
                 </ul>
               {% endblock menu %}
@@ -44,7 +45,7 @@
             </div>
         {% endif %}
         {% if flash.warning %}
-            <div class="warning">
+            <div class="notice">
                 {{ flash.warning }}
             </div>
         {% endif %}
@@ -64,8 +65,7 @@
     </div><!-- end content-->
     <div id="footer">
       {% block footer %}
-      <h3>Here is the footer</h3>
-      <p>Nulla vitae elit libero, a pharetra augue.</p>
+      <h3>Created by Jamison Dance for <a href="http://ilab.cs.byu.edu/cs360/2011w/assignments/lab7.html">CS 360</a></h3>
       {% endblock %}
     </div><!-- end footer-->
   </div><!-- end container -->
