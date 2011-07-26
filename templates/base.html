@@ -21,7 +21,11 @@
   <div id="container">
       <div id="header">
       {% block header %}
-          <h1 id="title"><a href="/feed/">Mimeograph</a></h1>
+      {% if user.is_authenticated %}
+          <h1 id="title"><a href="{% url 'mime.views.own_feed' %}">Mimeograph</a></h1>
+      {% else %}
+          <h1 id="title"><a href="{% url 'shared.views.home' %}">Mimeograph</a></h1>
+      {% endif %}
           <div id="menu">
               {% block menu %}
                 <ul>

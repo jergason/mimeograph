@@ -34,17 +34,18 @@ def other_feed(request, user_name):
     """Look at a user's feed of posts. If the user is logged in, then they will
     be able to follow the user and those they follow."""
     user = User.objects.filter(username=user_name)
-    #if they are trying to look at their own page, then
-    #show the correct one
+    #if they are trying to look at their own page, then show the correct one
     if request.user.username == user_name:
         return redirect('mime.views.own_feed')
     if user.count() == 0:
-        # request.session['flash']['error'] = "Feed for %s not found" % user_name
-        raise Http404
+        set_flash_message(request, 'error', "Feed for %s not found." % user_name)
+        return redirect('mime.views.own_feed')
     else:
         user = user[0]
         posts = Mime.objects.filter(author=user)
-        is_current_user_following = Following.objects.filter(follower=User.objects.get(username=request.user.username), followee=User.objects.get(username=user_name)).exists()
+        if request.user.is_authenticated():
+            print("User is authenticated")
+        is_current_user_following = Following.objects.filter(follower=User.objects.get(username=request.user.username), followee=User.objects.get(username=user_name)).exists() if request.user.is_authenticated() else False
         return render_to_response('other_feed.html',
                 { 'u': user, 'posts': posts,
                     'other_user': user_name,
