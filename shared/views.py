@@ -70,7 +70,8 @@ def forgot_password(request):
             u.set_password(random_password)
             u.save()
             # send an email to them.
-            send_mail('Password Reset on Mimeograph', message, 'noreply@mimeograph.com', [u.email], fail_silently=False)
+            send_mail('Password Reset on Mimeograph', message,
+                    'noreply@mimeograph.com', [u.email], fail_silently=True)
             set_flash_message(request, 'success', "Password successfully reset for %s." % u.username)
             return redirect('shared.views.home')
         else:
