@@ -15,6 +15,8 @@ fine with other versions of Python.
    for instructions on how to install.
 2. Get and install the Python Image Library 1.1.7 from
    http://www.pythonware.com/products/pil/index.htm.
+   You may need some additional libraries for PIL to work. See its
+   readme for more information.
 3. Run `git clone git://github.com/jergason/mimeograph.git; cd mimeograph`
    to get the code and go into the mimeograph directory.
 4. Run `python manage.py syncdb`, and do not create a superuser or the
