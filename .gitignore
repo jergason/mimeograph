@@ -1,6 +1,5 @@
 *.pyc
 ~*
-db
 staticcollection
 *.db
 .DS_Store

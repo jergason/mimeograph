@@ -17,7 +17,9 @@ fine with other versions of Python.
    http://www.pythonware.com/products/pil/index.htm.
 3. Run `git clone git://github.com/jergason/mimeograph.git; cd mimeograph`
    to get the code and go into the mimeograph directory.
-4. Run `python manage.py syncdb`. This should automatically load the
-   fixtures with some seed data.
+4. Run `python manage.py syncdb`, and do not create a superuser or the
+   fixtures will not load. This should automatically load the
+   fixtures with some seed data. The superuser is `jergason` with a
+   password of `password`
 5. Run it with `python manage.py runserver` and go to
    `http://localhost:8000` to check it out!
