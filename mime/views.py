@@ -84,8 +84,10 @@ def mime_create(request):
     if request.method == "POST":
         form = MimeForm(request.POST, request.FILES)
         if form.is_valid():
-            #process data, create the Mime, set the session and redirect
             img = handle_uploaded_image(request.FILES['content'])
+            if img is None:
+                set_flash_message(request, 'error', "Image could not be found or was not a valid image. Please try again.")
+                return redirect('mime.views.own_feed')
             mime = Mime(author=request.user.get_profile(), content=img)
             mime.save()
             set_flash_message(request, 'success', "Mime successfully posted.")

@@ -23,23 +23,26 @@ def convert_image(image):
     zonebounds=[36 ,72, 108, 144, 180, 216, 252]
 
     # resize image
-    im=Image.open(image)
-    im=im.resize((80, 37),Image.BILINEAR)
-    # convert to black and white
-    im=im.convert("L")
+    try:
+        im=Image.open(image)
+        im=im.resize((80, 37),Image.BILINEAR)
+        # convert to black and white
+        im=im.convert("L")
 
-    # Loop over each pixel and replace with a character of
-    # approximately the same brightness.
-    str=""
-    for y in range(0,im.size[1]):
-        for x in range(0,im.size[0]):
-            lum=255-im.getpixel((x,y))
-            row=bisect(zonebounds,lum)
-            possibles=greyscale[row]
-            str=str+possibles[random.randint(0,len(possibles)-1)]
-        str=str+"\n"
+        # Loop over each pixel and replace with a character of
+        # approximately the same brightness.
+        str=""
+        for y in range(0,im.size[1]):
+            for x in range(0,im.size[0]):
+                lum=255-im.getpixel((x,y))
+                row=bisect(zonebounds,lum)
+                possibles=greyscale[row]
+                str=str+possibles[random.randint(0,len(possibles)-1)]
+            str=str+"\n"
 
-    return str
+        return str
+    except IOError as (errno, errstr):
+        return None
 
 
 def get_flash_messages(request):
