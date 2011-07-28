@@ -41,7 +41,7 @@ def convert_image(image):
             str=str+"\n"
 
         return str
-    except IOError as (errno, errstr):
+    except IOError:
         return None
 
 
