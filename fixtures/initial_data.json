@@ -1,0 +1,1069 @@
+[
+  {
+    "pk": 5, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "contenttype", 
+      "name": "content type", 
+      "app_label": "contenttypes"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "following", 
+      "name": "following", 
+      "app_label": "mime"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "group", 
+      "name": "group", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "list", 
+      "name": "list", 
+      "app_label": "mime"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "logentry", 
+      "name": "log entry", 
+      "app_label": "admin"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "message", 
+      "name": "message", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "mime", 
+      "name": "mime", 
+      "app_label": "mime"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "mimeographprofile", 
+      "name": "mimeograph profile", 
+      "app_label": "mime"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "permission", 
+      "name": "permission", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "session", 
+      "name": "session", 
+      "app_label": "sessions"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "user", 
+      "name": "user", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": "3af7385c83e6c1eebecf0a0ae695ec3c", 
+    "model": "sessions.session", 
+    "fields": {
+      "expire_date": "2011-08-11 13:29:23", 
+      "session_data": "NDUyOTk4OGY1YmRiNjNmNzVhNGQ5OTA2MWY5OTM2N2FlYjg3NGU1NzqAAn1xAShVBWZsYXNofVUN\nX2F1dGhfdXNlcl9pZEsFVRJfYXV0aF91c2VyX2JhY2tlbmRVKWRqYW5nby5jb250cmliLmF1dGgu\nYmFja2VuZHMuTW9kZWxCYWNrZW5kdS4=\n"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:28:11", 
+      "object_repr": "jergason is following billybob", 
+      "object_id": "18", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:28:06", 
+      "object_repr": "another is following ashton_kutcher", 
+      "object_id": "17", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:28:00", 
+      "object_repr": "billybob is following ashton_kutcher", 
+      "object_id": "16", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:27:40", 
+      "object_repr": "billybob", 
+      "object_id": "7", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:27:35", 
+      "object_repr": "billybob", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:27:26", 
+      "object_repr": "another", 
+      "object_id": "6", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:27:18", 
+      "object_repr": "another", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:36", 
+      "object_repr": "hurp_durp is following jergason", 
+      "object_id": "13", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:31", 
+      "object_repr": "hurp_durp is following foobar", 
+      "object_id": "12", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:24", 
+      "object_repr": "foobar is following beans", 
+      "object_id": "11", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:20", 
+      "object_repr": "foobar is following jergason", 
+      "object_id": "10", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:15", 
+      "object_repr": "hurp_durp is following ashton_kutcher", 
+      "object_id": "9", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:07", 
+      "object_repr": "beans is following ashton_kutcher", 
+      "object_id": "8", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:25:01", 
+      "object_repr": "foobar is following ashton_kutcher", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:24:54", 
+      "object_repr": "jergason is following ashton_kutcher", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:24:32", 
+      "object_repr": "hurp_durp", 
+      "object_id": "5", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:24:15", 
+      "object_repr": "hurp_durp", 
+      "object_id": "5", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:24:06", 
+      "object_repr": "beans", 
+      "object_id": "4", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:23:54", 
+      "object_repr": "beans", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:23:48", 
+      "object_repr": "foobar", 
+      "object_id": "3", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:23:39", 
+      "object_repr": "foobar", 
+      "object_id": "3", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2011-07-28 13:23:19", 
+      "object_repr": "ashton_kutcher", 
+      "object_id": "2", 
+      "change_message": "Changed email.", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2011-07-28 13:23:01", 
+      "object_repr": "ashton_kutcher", 
+      "object_id": "2", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 2
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 3
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 4
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 5
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 6
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "mime.mimeographprofile", 
+    "fields": {
+      "user": 7
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 1, 
+      "followee": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 2, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 3, 
+      "followee": 3
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 4, 
+      "followee": 4
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 5, 
+      "followee": 5
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 1, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 3, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 4, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 5, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 3, 
+      "followee": 1
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 3, 
+      "followee": 4
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 5, 
+      "followee": 3
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 5, 
+      "followee": 1
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 6, 
+      "followee": 6
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 7, 
+      "followee": 7
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 7, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 6, 
+      "followee": 2
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "mime.following", 
+    "fields": {
+      "follower": 1, 
+      "followee": 7
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "mime.mime", 
+    "fields": {
+      "content": "-,,,--,,--,,,-,---,-,-,-,-----,-,--,,,,--------,,,-,,-,,-,,,--,,---,-,-,---,,--,\n-,--,,,-,-,,-,--,,-----,-,--,,,,-,--,-,,----,,-,--,-,,,-,,,,--,,-,-,-,--,-,,,,,,\n-,---,,---,,,-,,----,,----,--,--,-,-,--,------,-,--,-,,,,-,,-,---,,,-,-,-,,-,---\n-----,-,,,---,,-,-,,,,-,-,,-,,c/=i,,|=~\\=_ic....|~-,--,--,--,,--,,,,-,---,,,-,,-\n,-----,,,,--,-----,-,-,,,....=........_c........_,...../!\\-----,,,,,,-,--,-,,-,,\n---,---,,,,,-,--,-,,,_\\/c  ...........v.....,.........,-,..---,-,-,,,-,-,------,\n--,,------,-,,-,,,v....-=~.............-..............-...-----,-,,--,---,----,-\n-,-,--,,,--,-,,--,,...................-....-........,....i_c\\,...-,-,-,-,--,-,-,\n-,-,,-,,,--,-....!i_\\............,-.-,,,,,-,--.....-.,--||,..,...i,---,--,---,,-\n,,-,-,---,,-,-,..-...ii........-,-,-,-----,,-,---,-,,,/\\..,.,--,....-,,-----,,--\n--,,---,,-,,,--i_-,,.-.,__--,-,,---|~!_/TT]!c,,,,|,,-,-,-,,........ci~---,,,-,-,\n-,,,,-,-,-,,.. .....,--,-,-jv--_[4W88AQKKMAA8KA4i/v--,_,--............./,,,,,-,-\n,---,,,,,,,,,--.......,.-c/\\,jbB*KtbM8V|-K.=8-ZWZB~zc-,-,,...,......-..v---,----\n--,,-,-,,,-\\\\c~=c/|-...--,cvvb55*-8M,Zb5V/z]QgPD,AKK)c-----,--..,.....,\\|,-,--,,\n,-,-,,-------,-..,|/\\|\\ff~!!j8PK[WfG--GzK2)T)A(4D]d8/|=--,---,-.........-i---,--\n-,--,,,,--,-. .........-,i=~gK8,bWei!e[-,M(WctGY*XZ)dgc_,,,-,...........-,=-,,,-\n-,,,-,,--,__~|i=~\\--,...-,-/PKBWdmmb-Y7/-,/XDeQb5XZW_---\\=!i-.............,,----\n-,,--,,-__-....,-,v\\~c\\|_zf[TQ*ZjmBKff[e,]ZmKAX5m_Ai!|,=,,--.-,.-...,~--,,--,,,,\n-,--,--,,,,-,,,\\-/e.....------_bmWb5KK8*dT[(KKdbmP),_,--.......,,.,,-,,-,,-,,--,\n,-,----,,,--=... ..-,......,-,,,/i_/WNNGXQWPKXe/c\\_,,-,.,.........c_|!v,,--,-,--\n,-,,-,----,,,,i-_vc.,......./,,i.-,--+,--5,--f--,-,-,-.-,,...........-,,,-,----,\n,---,-,-,-,,--//........./_,,......-,7---\\,-,-,---,,,..-..,..=.....,..,,-,,----,\n----,,-,,,,-,-........\\ci,,. .......\\.,-,-!-...--...,..-....-..--,--,-,-,,----,-\n,--,,----,--,-. .,,,--,==...........i..-..=...i..,...,.../.......,,,-,,,-,--,---\n-,,,-,---,-,-,-,,,--,,--. . ......., .....|v.. ....\\.....,-,-.i--,,-,,,--,-,--,,\n-,,,,,,--,,---,,-,-,-,-....   ....., .....vc,......,-. .. ,,,-,-,,,--,-,--,,---,\n,---,,-,---,-,,,,---,-,.. ..,.. ..i[ .....|/-i  ....-,,,..,-----,,,--,--,--,-,-,\n--,-,--,,-,,,,-,,,,,,,------,i..i(4Q- ....,,-,---..,---,-,,---,,--,,--,,,,,----,\n,---,-,--,--,,,-,--,,--,,,,--,,,,KDgT ...-,,-,--,--,,-,-,--,-,-,,-----,,,-,--,,,\n-,,-,,-,----,,-,-,,-,-,,,,,,,,--|Y)2/----,-,-,,,,,,-,-,---,-,,,--,,------,,,,-,-\n-,-,--,,--,,-,-,-,,,,,-,,,,--,-,_P+-,,-,,,-,,--,-,,-,-,,,,--,,,--,-,-,,-,--,,,,,\n,-------,,,,-,,,--,-,---,---,,--,]2--,----,,,,,,-,,--,-,--,,---,-,,,-,---,---,,,\n,---,,,-,,--,,,-,----,,,,-,,,,,-,=|,--,,--,,--,-,-,,,-----,,-,---,,-----,,-,----\n-,-,,,,,-,--,-------,-,,,-,-,-,,-i-,-,,---,--,,,,---,-,,-----,--,,--,-,,,,--,-,,\n,----,,,,-,,----,--,-,,-,------,,=,--,-,--,,,----,-,,,--,-,-,,----,--,-,--,,--,-\n..,--,---,,,,,,-,----,,,-,---,,,------,,,-----,,,-,,,,,--,-,,,-,---,,,-,-,------\n..,,,,,-,,-,,,,--,,,,,-,,,----,,,,|---,,,,-,,,-,,--,,,-,,-,-,--,,-,-,-,-,-,,-,--\n", 
+      "pub_date": "2011-07-28 13:28:25", 
+      "author": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "mime.mime", 
+    "fields": {
+      "content": "~i,,-,-,,--,,,-,,--,,---,--,--,-,--,,,-_g~. ~c,              ---,,,,-,,,,--,-,-,\n-,\\,-,,--,,--,--,cii~,--,--,,,,--.                            -----,,,,--,-,----\n\\\\~\\v=,-,-,,,,,KMM8M4T]|,,-,,,\\/([.              =c,,,, [.    ,-,---,,------,---\nc\\/,,,-,-,--,-bBWAABM85]t-,-\\e_!v].             v\\-_,,vezT,    -md5GPQV_,-,,,-=~\n-,---,=,,,--,~mWAKBA8K*4Pev_KYY*VP/            \\-\\jftc--/*4.  !DmQ8BK8KW[,---,--\n,-=~,-,,-,---,bAMKAMAKdPD+X*KWBbd7!..          c__*YX*Kv)YzQGKBG4XNBBAMdm-,,,,-,\n/,,-,,,\\-,--,-eWKM8MWBMWGMWYN*8BAZ/,          -_+j4Gt+\\m*/dABKAB*GA8BBABP,-,,,,-\nv=!--,-,-,!,---KBMAW)VPWMmYWNQ8AbT/        .--\\_/vZG(-cNW[7MMABAAAWKWKM8Q,-/,,,,\n,,,e|)-\\,---/-,~YAK,ct(4Q88dPBBKPt         !-~-!T4BAKgNWM*XWMBWKBWBWB8MW+,-,---,\n-|j7!,_--,-,-----|8W!~!zKAW48AYbP          ,,/v-+zYMMd*tAAMW8AKB8WAMMBD_,--,_,-,\n~c|,,,v,,,--,,,,,-!iNAfBKKGKKbYd           --)/,]/jgMMYPBMM88B8MAAWWKK|=/-,,---,\n!_--|v,,-,--!-|/~~-,-,,/4]|MA5X            ---e|+!+Vd8K*WMKKDDBWAKPTv,---,!,i|-,\n_|c,-\\_/i\\-,,--,--,-,,--,--KX4             ,-,)/7_VXYZDm=,)-.=,-c,i,,-,v-,,-/_vi\n//!,,-,-_,---,,,,,,--,-,-,-*|              ,-!z|*!bG**YWD,.-.,--,-,-,,--,(-,-/,~\n,,,---v!,_=,,c/-,,---~|--,-                ._,cfXX*QP548G~, ,!c-,,----,_,,-----,\n|v/i_!\\,c!,-,---\\c,-,,,       ....-...      --,bQKbPWKYm!~|.i,|i,,!,,-,,,,---,,-\nccii,/=\\,/_i/,,=~,!\\i..  ...-,,.,\\i,--...      -t4N*NDd/v--,,,,=-\\-,,,i,-c/,-i,,\n-civ|--vc~,,--c,,,,,,mg-|i\\cTe~,-V~v.........-\\  cQDN=_!i,-|-_-,-,-=i/,,~=\\-~c~!\n|,,,\\c/,-!,i-~|/|vv-gT~!_f2je])[/Tvc\\i-..... ,P+  Dd*|~/~-,--,\\,-\\,|,-/|-v-,---i\n|!/|/c\\_,-~,|v,,,|-!]4ft=[\\+/ge/tV=)f/~-.--~vfW4\\ !c8-Tce,,\\~--iv-\\!-\\i|----/|\\,\ni//=|~4i]=c~,-\\c/,-5ZtmND[[(2(/X+Z)t[/)_!25YZeKmN  N*ve_|,,-,!i,/=i,-v-,,-,-,-,-\n-_/-,,|,\\-=i,,c!c-~5YMK5GP4PdbZ5()[V*Qj44Pm5*PAm=. 7Xc__,,c,,_t-=,\\-|,,v-,_c,~/=\n_!_-,-=/--,=c|c\\,/5bQ8KWDdKDZYZXP*QX54ddKXZWB/gG~. Q5)/i2ii\\ic~v,,v-/v!,/7\\_-|!=\n/=vvitv/=~v!_|\\j/\\GKNGWMmGGQmZ*Q*GKDK*GWXGAzVT4,-. QP,N,,,,==/-,ii!|,-+/,-,!~-,!\nicc\\-c,/(i\\_Vgi_cjdMDBY*DbG4mQKZ5KZ5ZXYmD,-_!Tefv  g,-\\,,,-,i-!,i/=-=--~!-,|~,=c\ni=\\-_-/c,+-j=t=!]/4G**bZWKKPdQ4dNZNPDNf..-,.,--,,  v,ijcv\\-,|~,i/=/|,=v|=----]_g\n,-,v~!-/_~gc,_cv~|G8*bGDG4dGd44XZN5YYdf7t!-i_  -.  -!!V-,\\\\---|,c\\i\\/=[\\,,/!cc-/\n/i!_~!-c\\/c|i-~zT|bP=Z*KdXPmPXYYP*G4ddDGdmTg. ,.    (XA!!-|jz!!,=/i_,!__5Tc/\\=--\n_-/\\iv[_!|==\\_/\\_vWMGNdQPPbGQY5YY54P5XX4DbYX[c-..     _,i,-i/_=cv||=cv(!i=e\\|c_~\n_i[--\\-/\\c/||~\\~]*AWKd5K*Gm45DdKP4dP*PGbZYQPV,--.     --,-_vcc|,=\\v,~_!\\!c_=i_/v\n!+\\_iif,c|(7|ivjf/Z8MABbPYZXdYGD5NZQQYQGG4Ye]!v-.....,,||(\\=/i!-V7_T!,_v\\=v,~/v~\n(\\/v,,\\c/v\\__zTNfGX2ZDYj2YPM*K4mKbYKGXP5G*5z=iv,!|,~~\\c~v\\]!fc~~\\_|[+_,\\=!v\\\\v\\i\n~==~!\\~//(\\cbzbeDNZQYNY/\\g5QKKXXdQGZKdb55dGKXDe=|/7~]|\\/V\\\\--,--/c-vi|!!)!\\T_-~|\n/|i|i|\\,-~=X*ge)[TDbDDKTV|/v~Ve2T]e)X*XP*K*Nf_\\~\\-~,~+=\\|_v!/,-/|_v~/-i|~+jci/-c\n_c-/_g\\_|\\jPP(XY+d++2T4GeT2=\\i\\\\_==\\/\\v\\\\//~,-f|-,\\g_,_jtzi\\|V,i/_/\\!\\\\=|\\cc//!=\n~/,cii/|=|jVN]K45DKGd*ZZPYQbfe~i|==c!|\\v!v~\\j(=\\c/+,,2/~--|j=\\~_-V\\!i_=,\\\\!!(|e|\n_/tje)vg/j54DZGgmGQGGdDXm54GN4dDbdtK74zGft7b]e]z_cvfi\\vT,=+//\\==\\!T|,|f/[V\\|e+tT\n", 
+      "pub_date": "2011-07-28 13:28:34", 
+      "author": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "mime.mime", 
+    "fields": {
+      "content": "7eBm8BQ5A8Z%MAZKK(N$$YbWKB$Qe7$M()B%%#M4PGXDZMY8#WK$@WA%ABePW@@K@@%#$@%@W@$@K$@#\nGW%MK@$#KM*$AWBQ@WK#WGZWB@bM(V4Z/td88Kd8#dQBWM*8Mb8WKWWKKT.fBAKAKWMMdB5AAM@A*)B$\nMKB8BW#AB%KMKKWZA@%KMDMKmAmMM$MK%PAMM4W@#8A#$WZAWKZmGB8dAi.8M#%d8@GeW5K],--\\(dQP\nd5K$W4B8A*KB8AWdmBB8ZGDY8YBDB%M5MMW*AK8MA#%P%#*$8M#GK@MM[/f[M%88MMK54@eP+j/!beMW\nK%#$#%MAA8#8/)jVGfK8e2QA8BMB888WW88dBGb8AGKKmZBNKDQWWBWA/2j)KbWBWNM8j@[dj,BBMbAA\nB#%#AZ#AKXA42W8z[4MMmdM$8@BW8A8dKM*5XVABB82T%%@B#@W*AKB5]T+j@GWQ4M@MWBd,.)8MBm8#\nA5e/dtWZMK2BBKB#%GBK$$B$Wm@@%bKY$M_]mg(+W82t2##@WG@KBZAA..,5bmNKMAW%AcgtVz)WA$BW\ng= \\.XMWWc4W@%@@AAKM%g8%$B#@)gPK[W(MXBt2)2TTtK$$NW%@WZ$W---+)KKAQ8KK/)2tbBW[*gA$\n,,!,-g5BdMY#KWWBBBA*D8M$$%%AB]AWBWMB#%Pc[+fjA@M$#%@$$W8-,-\\4GGN#MAWj[222%$WtMW8%\nG-,v-K$#5fgGZNAK$N)_V[$$8M$MBB=_t2AWNB5)j]+zA7QKA7dN5Wf.,-_BKm#%Y#=-,PjB#%$%#B$@\n)/+,  8@$#%#B##%5KM2]~WB#WB%#Mt!,i#@WMeK$M8@K*Xm5/j@$M.,~e/A8A@#D--.-QY%$Y%8Nd8B\n ..  ...8$BKM8AM%MK%A5b*z]b,-2TG,K/NPeGY#K$#)WjB4[)8K-,_))eMA$d_,,!QDMAABB@5BdWA\n ..   ...Q5(/zeGVY54ZVe[2tV|m4BAjKv,--m7dGm///)7jg7g/,\\eT([Vf-/c~Vdvv/_+f!!!i/|c\n.. ...-   K8*Md,--.m5VKZ7V,Az4B/Q2 G(..BBYXmK4G8K[#@]-2fj+t-,,|-ize*d$@#M@ABAMAW\n  .,..i.. M5A5Wi\\/ .  ./V!MA\\.!-=._M+.~2WAbWW8W%bKW8TP5g+2(,~_|[5XQW$%BdW%G$AB@W\n ........-!8W2fA#%WmWbj_/v|v~itzMQ,d*Z]=mWAd+MBeW%M[Tg7eQQmf=/)*ADAVAWMb5BbYMKm7\n.,--,,)KQG2T~=f+KAY\\=8AQNieA2~ZzKzKBdP.-KDB8/zBmAWi.]4gzg[ZYK8[8DX+v(TbZK8A~ZN(d\n..,..v,=B%%8#A88NW%%7PbDD(-,Yjz=A[W$+8QW\\AK/.-Tg(c-,,,c_dGdX/8A[KWMcWNKBMW88dPmV\n%$M##WW$A+BK4$M8#GWA@BA@K#8$88!KWDAMB%#(DBBi-!vK2\\_,-,c,]2YBBPeVg87bfZAAA/Z[#A8G\nM@$$BMA@A$B8BA*!/WKBWXMNA%#8GDA8WAQPZWMMYi*[~~[]!=--!|!T4|jNNWdN5XXKT@#$@4M$@%#A\nBBAA8AWQddGbN]dMQ5\\K5bBBQTPWWB]Nm\\W8AY(W!T!gfN----ifvz[/-T.....                 \nB#8BMMWt7@A+Z_P~[N=||fGm/tjBm5,-iY,tbgz~~5W=,fc=|\\~~2]KKmQAM8YgzQ/+K-WM##N$#%%4d\n%W#@BMWT#Z/%|m8\\iv|_G@ADAY4b(....dM5PPDYfPWm=\\|+QG(i|~T\\)tMVK8z5AA2,~2A%%)($@T/A\nWB$MKWK$BKVK=*M2Kv=/KA%KWci~..,-N%#PBDzDDA_v|5*AmW5+=|ftmV@K@ZWWX[A_)zWMKdB)Pc/\\\nBM@BW8bd*(/)4eBdWMNA[i$%BXB..!-KKB8DMfP*BYMP,=_vgK/g]+*/.,[ .m(AZB BA ..@5W4)W-T\nW~B$ABg+!2T]g_V=\\~tz]_j~ig...-vMe|T~t7M8MZ.../,..ZWz]\\/!ft7//7VfjVf(T+]Vg)(7ttT)\n@vG#YDXbAv f[4~vt,5m/|_g,f-iV,88K~+/--mYX.-~|,--T8KddP..-e%i/KK_f.K8%Wm/iZA@K+28\n8cBWNKfz[B%tKBDP$Kj88A]V-~2DGiKVW%g/iMzT/..\\~+c-z7W|M\\,..,W_|BbZKmWKcM~VcBdMeb~!\n8+)WAAZe7AB-,KM-]+MK_fW8Qt/X2MGiXvB!vBMdG[-.|YKe,,|cPB~-,,cbP|KK~W84M8j2cK8WWKd\\\n#KKWKMN2QAKWD77P~QZA4dmmNmP[D]|\\(d722iTA8B4g!,*WKKMAKBW4z,/DW/_f+KA/AMB8.=/88+-_\n.]WWBA)88Y8)Z7D-G8/f8_!KKBWeKfDf5VAcmBvK@5B4-,]|],,[NZb,,,ZNQmK2/K..[g+e=tW8(AKW\ni/ABA8QGbQ/mdTtTK4TdGK)W*ffG[GXYmg7[f)AYB@B*QbZX4QddKGc,VPbNKPfQ54WZ8GKX*YKz/)gd\n,-e8B8|,-,,,-,,,,,,-,-vBf,--,,-----,,,)#)W@Z-,,,--,,v,7Y-,,--,,,-,-,----,,----,,\n/-,G*5-,,-,,,|\\~/i\\--Tt/,,,-----,,,---KNAKQ..-.,\\,-~Q(.,..,-----,,,---,,,---,---\n...,,,...--,---,--,,.!c...,-,------,-.D-A-8-.,,-...--,-,,,,,-,---.,----,,-,-,,,-\n--,,-,,,,,,,,,,,,,.2|~-,--,,-,--,,-,,-,-vKQTm-,----.--,,,-,-,,-,,---,,---,,,,,,-\nbQmPPDDmK4ZYYNWZXm5Z5Z5KWA4AM5KKWDW8AKMA5B*44GGNBBYPAKWG4YKKQ4ADP8KMGBDAZPY4YA88\n", 
+      "pub_date": "2011-07-28 13:28:56", 
+      "author": 2
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "mime.mime", 
+    "fields": {
+      "content": "--,,,,,--,,-,,-,,,,-,,,,,-,,,-,--,,---,-,---,,,-,-,-----,-,-,--,,,-,,,,-,----,-,\n-,-,,-,--,-,,-,,,----,-,,,,-,--,,,,,--,-,-,,-,-,-,---,,,,,---,,-,,,,,,,,,--,,-,,\n,,-----,,-,,,,----,,,,,--,-,,,---,--,--,,-,-,-,-------,--,---,---,,,,,-,,-,--,,-\n,--,,,----,,,-,---,-,,,-,,---,i\\vv-,~c==_c=c....i!,,,,---,,-,,-,,-,----,,--,,,,-\n,---,,,-,,,--,,--,-,,--,-..../........~!........=,.....==_,,,,,,,-,-,-,---,,-,,-\n-,,,,,,,,,--,,---,-,,icv_  ...........|.....-.........-,-..,,-,,--,,-,-,,-,,,-,-\n,,,,--,,---,,-,-,-\\....-=~.............,..............-...,,--,,-,,,,---,-,-,,,-\n,,-,,,,-,--,-,--,-,...................,....,........,....~!i~-...,----,-,,,-,,,-\n--,,,,---,-,-...._//v............--.,,,-,--,--.....-.---ic-..,...|,---,---,--,,,\n-,,,,,,--,,,-,,..,...~\\........,--,,---,,,,,-----,,,,,\\i..,.---,....--,,-,----,,\n---,-,-,,--,,-,=!,--.,.,!i-,,--,--,c~~/tVt+vv,,--v--,,,---,......../!\\,,-----,--\n,-,-,,,-,,,-.. .....,,--,--(~,-v[GAWWW48MKMABB8Qv=_,,,=,-,.............!,--,,,--\n,,,--,,-,-,--,-.......,.-\\\\~,gX8DAtXMBf\\-M.~B-Q8YA=7=--,-,...,......,../,-,,-,,-\n----------,!v_/ii_\\-...,,,v!/NK44,AA-m4XTi[(XfZd,BADf\\--,,,,,-..,.....-~=-,-,-,,\n-,,--,,--,,,---..-|=~/|[Vci=)BdY]MeD,,d+Az/te8t4dj4Mg==-,,,,,,,.........,i-,--,-\n--,,-,-,-,-,. .........--\\\\\\tBW-K8Vc~)z,-8zA~(4KQP*[P2c/-,---...........-,~-,,,-\n,--,---,,-!=|!=\\\\/---...,-,!*KMM*NbD-K/t--!KdfQbZZNK~,,,i\\=~-.............--,-,-\n-,-,----v_-....,--c||iv!!]]g[KDYeZW8])2g-jGP*KG*YcBvi_,v,-,-.-,.,...,=,--,,--,--\n----,-----,,-,-/-~V.....,-,,,-i*4AP4mXB*Yeg)DAddZb7-=,,,.......--.,,,,--,-,,-,--\n---,,--,-,-,_... ..,-......-,-,-_c~/KGKG5D8**mfi=\\\\-,,-.-.........c=cic,,-,-,,--\n,-,,--,-,,-,-,~-v_i.,.......],-\\.---,)--,b,,-+---,----.-,,...........---,--,----\n---,,,-,--,,,,vi........./v,,......-,]-,-!,-,----,,-,..-..,..i.....-..-,--,,-,,-\n,-,-,,-,,,-,-,........__=--. .......=.,---|-...--...-..-....,..,------,,,,,--,-,\n,-,,,,---,,---. .-,,,,,v_...........!..,..|..._..-...,...~.......,-,-,,,-----,-,\n,,----,-,----,,,--,,,,,,. . .......- .....c/.. ....\\.....-,,,./-,,,-,-,,-,--,,--\n---,--,,,,-,--,,,,-,--,....   .....- .....cv,......,,. .. ,,,,,,,,,,,--,---,,-,,\n-,,,,,,-,,---,,------,,.. ..,.. ..~] .....~i-|  ....----..-,-,-,---,-,,--,-,,-,,\n,,---,--,---,---,--,,,,-,,-,,v..|tbK- ....--,---,..--,-,,,--,-,,,---,----,,,,--,\n-,,-,-----,,,--,---,-,,--,-,,,--,*Det ...,,-,-,,,-,,,--,-,---,,,,,,-,---,,,--,,-\n,,,-,,-,--,,-,,-,,-,-,,--,--,,,,!P(T~,-,,-,-,,----,--,-,,,,--,-,-,,,-,,,,-,,-,,-\n-,,--,--,--,--,-,,-,-,,-,-,,,,,,vKe--,----,,,-,--,,-,--,--,,-,,,,,---,-,-,,,-,,,\n--,-,---,,-,-,,--,-,---,-,--,,--,/f-,,,-,,-,,-,--,-,,-,,,,,-,,-,--,,,,,,------,-\n,,,,,,-,--,-,,-,,--,,-,--,,,---,-!~,,-,,,,---,,---,--,,-,,-,--,,-,-,----,,--,,-,\n,-,-,,,--,,,--,--,-,,,--,-,---,,,|,-,-,----,,--,---,,,,,,-,,-,-,---,-,-,---,----\n,,-,,,,,-,-,,,,,,-,-,-,,---,,--,-c,,,-,,,--,,--,-,,,,,----,,,,,--,,,---,,,,,--,-\n..,--,,--,-,-,-,--,-,----,,,--,-,-,-,--,---,------,,,,-,,,,--,--,-,,-,,,------,-\n..-,-----,--,,--,,-----,,,-,,,,,-,|,-,-,,,,,,,,,---,,,-,,--,,,,-,,,,,--,-,-,,,,,\n", 
+      "pub_date": "2011-07-28 13:29:01", 
+      "author": 2
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "mime.mime", 
+    "fields": {
+      "content": "                                                                                \n                                                                                \n                                                                                \n                                                                                \n                                                                                \n                                                                                \n                                                                                \n                                                                                \n               ~tg](z7gV+g)=                                                    \n            .\\cT[c)\\\\~\\/j(2+T/)/                                                \n           ~==VT[]|=v~~]|=z~vVT)/=!   .Wi                                       \n                  ,~7+7[[j2ft+)fci=cz!(AB]v/!g(j=7!v-                           \n                         ,]+zVNzK7]giZ,Ae.-....._, ..-,-.                       \n                       KKA*KM85]fT[/eAd88,--_,!|,-~|c,-=_f(|.                   \n                     8XKPK4i,-,,,\\!\\~c/f/--........,,,_i_vtTf(-                 \n                    BBKXND*b-.....................,--=tNQ5)7PXg)                \n                  .KK8ZQZYdbe*|,-,-,....,,,!!~i/[]]K*+YZ*NMbZ5Kdf               \n                  MM885XbYZP5XPDG4G4QKQDZG4DQKYP45Y5DXGAKAKWAMBBQ|              \n                 zWAdKQGbbGDY5*KPNbNZQY5ZP*NNKBMGZ8MQMK8XWBMG4MBN+-             \n                 WMAYY*Y5NQP4XP*bA5KZYPBWKZABB88PA8BWMKAWMAZWKKD(i,             \n                 88*ZW85D5P8B8BBW88bMMDWAAKBWW8KBAWBWWWBAMWMK[tzT\\,             \n                 KWD8M*MYmMMW*KB8WK8PdPBAABPKMK8B88AAK8W88dYYgcg\\~,             \n                 4BAMK8WMMN8A*A8AMM8NBAKAAMMWBKMW8M8BWMMBNd*N][_/\\.             \n                 -DW8WKKMMAAW8W88AMKAK58M28K8B8BWBKZ)BbWWBB*5V||=,              \n                  =4d8WWAKW8BMBAB8MMAMWWWABKAX*j5BAB5BZK8AQm47!/,               \n                   ,e)*MBBKMYKKBKKMA8AMK88mMWKBMAK8bMKmKWWKDX_-,                \n                    ,c(QmAM8AMWKKW2WWK8KKB4AWWPKAWBYKBKWWA8Q_,,                 \n                     .\\ztbKMMBAA4KBBBAMDKWmB8ZPMAK8MBKW5KWZV-.                  \n                       ,ifdbNDP8AW8BMBKB48MWMM8WAAMABWWWAK!-.                   \n                         c++KmN8PMMB8QKWWM8A8WW5KKAmBWMYQ=i.                    \n                           +d5ANKKWB8MKBB888KBKABWMKKW*i[2                      \n                             KM8BAKA8WABBKBMMBKBBWBBM%K-                        \n                         ...-cvTd*KmXWBbMBWWWMBM8KWZZ/~,...                     \n                               ......................                           \n                                                                                \n                                                                                \n                                                                                \n", 
+      "pub_date": "2011-07-28 13:29:22", 
+      "author": 5
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_logentry", 
+      "name": "Can add log entry", 
+      "content_type": 7
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_logentry", 
+      "name": "Can change log entry", 
+      "content_type": 7
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_logentry", 
+      "name": "Can delete log entry", 
+      "content_type": 7
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_group", 
+      "name": "Can add group", 
+      "content_type": 2
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_group", 
+      "name": "Can change group", 
+      "content_type": 2
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_group", 
+      "name": "Can delete group", 
+      "content_type": 2
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_message", 
+      "name": "Can add message", 
+      "content_type": 4
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_message", 
+      "name": "Can change message", 
+      "content_type": 4
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_message", 
+      "name": "Can delete message", 
+      "content_type": 4
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_permission", 
+      "name": "Can add permission", 
+      "content_type": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_permission", 
+      "name": "Can change permission", 
+      "content_type": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_permission", 
+      "name": "Can delete permission", 
+      "content_type": 1
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_user", 
+      "name": "Can add user", 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_user", 
+      "name": "Can change user", 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_user", 
+      "name": "Can delete user", 
+      "content_type": 3
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_contenttype", 
+      "name": "Can add content type", 
+      "content_type": 5
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_contenttype", 
+      "name": "Can change content type", 
+      "content_type": 5
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_contenttype", 
+      "name": "Can delete content type", 
+      "content_type": 5
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_following", 
+      "name": "Can add following", 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_following", 
+      "name": "Can change following", 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_following", 
+      "name": "Can delete following", 
+      "content_type": 9
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_list", 
+      "name": "Can add list", 
+      "content_type": 10
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_list", 
+      "name": "Can change list", 
+      "content_type": 10
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_list", 
+      "name": "Can delete list", 
+      "content_type": 10
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_mime", 
+      "name": "Can add mime", 
+      "content_type": 11
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_mime", 
+      "name": "Can change mime", 
+      "content_type": 11
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_mime", 
+      "name": "Can delete mime", 
+      "content_type": 11
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_mimeographprofile", 
+      "name": "Can add mimeograph profile", 
+      "content_type": 8
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_mimeographprofile", 
+      "name": "Can change mimeograph profile", 
+      "content_type": 8
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_mimeographprofile", 
+      "name": "Can delete mimeograph profile", 
+      "content_type": 8
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_session", 
+      "name": "Can add session", 
+      "content_type": 6
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_session", 
+      "name": "Can change session", 
+      "content_type": 6
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_session", 
+      "name": "Can delete session", 
+      "content_type": 6
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "jergason", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2011-07-28 13:22:41", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$f1458$65cb36921611db0b677f60f889bc6f241c9bdff5", 
+      "email": "jergason@byu.net", 
+      "date_joined": "2011-07-28 13:21:18"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "ashton_kutcher", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:28:42", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$dc650$7971f48e816a0ab70976d42b0aa28b35b273cc59", 
+      "email": "ashton@test.com", 
+      "date_joined": "2011-07-28 13:23:01"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "foobar", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:23:39", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$bd674$4dd6379c155f228b1fe34426b19ebbd26d0b9ebc", 
+      "email": "foobar@test.com", 
+      "date_joined": "2011-07-28 13:23:39"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "beans", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:23:54", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$a2f79$d272f83cbd2d052a01fb9b90460ca06dc19187f9", 
+      "email": "beans@test.com", 
+      "date_joined": "2011-07-28 13:23:54"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "hurp_durp", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:29:12", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$b6f2d$0908ed8c1904e029c69249b69795771f1df40810", 
+      "email": "hurpdurp@test.com", 
+      "date_joined": "2011-07-28 13:24:15"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "another", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:27:18", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$3896e$3134b2d7f658b128aed593e50ab412cf761466f9", 
+      "email": "another@test.com", 
+      "date_joined": "2011-07-28 13:27:18"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "billybob", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2011-07-28 13:27:35", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$af495$21b216baa3fbc4c2b637c04ac1786e42860ce26f", 
+      "email": "billybob@test.com", 
+      "date_joined": "2011-07-28 13:27:35"
+    }
+  }
+]
